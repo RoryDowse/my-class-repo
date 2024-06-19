@@ -2,29 +2,33 @@
   width: 200px;
   height: 100px;
   /* Font-family property specifies a list of fonts to be used in order of priority */
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: #fffacd;
 }
 
 .section-blue {
   /* Line-height property sets the distance between lines of text */
   line-height: 100px;
-  color: #ffa500;
+  color: #fffacd;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   background-color: #0000FF;
 }
   
 .container {
-  font-family: "Lucida Console", Monaco, monospace;
-  color: white;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: #fffacd;
   background-color: black;
 }
 
 #section-1 {
   /* Font-size property sets the size of a font */
   font-size: 26px;
-  color: #ffff00;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: ##fffacd;
   background-color: #800080;
 }
 
 #section-6 {
-  color: #ffff00;
+  color: ##fffacd;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
