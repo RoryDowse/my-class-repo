@@ -55,9 +55,22 @@ for (let i = 0; i < numArray.length; i++) {
 }
 console.log(sum);
 // iterate through numArray and console log the sum of all the numbers greater than 50
-
+let sumGreaterThan50 = 0;
+for (let i = 0; i < numArray.length; i++) {
+  if (numArray[i] > 50) {
+    sumGreaterThan50 += numArray[i];
+  }
+}
+console.log(sumGreaterThan50);
 // iterate through numArray and console log the sum of all the even numbers
-
+let evenNumbers = 0;
+for (let i = 0; i < numArray.length; i++) {
+  if (numArray[i] % 2 === 0) {
+    // checks if no remainer when divided by 2 - even numbers have a remainder of 0, while odd numbers have a remainer of 1
+    evenNumbers += numArray[i];
+  }
+}
+console.log(evenNumbers);
 // This seperator is here to make your console logs a little easier to read
 // by creating seperations between the different sections of the activity
 console.log("--------------------------Seperator 3--------------------------");
@@ -86,11 +99,30 @@ let fruits = [
   "Grape",
 ];
 // iterate through fruits and console log the number of times "Apple" appears in the array
-
+let appleTotal = 0;
+for (i = 0; i < fruits.length; i++) {
+  if (fruits[i] === "Apple") {
+    appleTotal += 1; // Increment the count by 1 each time "Apple" is found
+  }
+}
+console.log(appleTotal);
 // iterate through fruits and console log the number of times "Peach" appears in the array
-
+let peachTotal = 0;
+for (i = 0; i < fruits.length; i++) {
+  if (fruits[i] === "Peach") {
+    peachTotal += 1;
+  }
+}
+console.log(peachTotal);
 // iterate through fruits and console log the number of fruits that start with "P" in the array
-
+let pStartTotal = 0;
+for (i = 0; i < fruits.length; i++) {
+  if (fruits[i].charAt(0) === "P") {
+    // charAt() method returns character at a specified index
+    pStartTotal += 1;
+  }
+}
+console.log(pStartTotal);
 // create a new empty array named uniqueFruits
 
 // iterate through fruits and populate uniqueFruits with only unique values from fruits
