@@ -124,12 +124,44 @@ for (i = 0; i < fruits.length; i++) {
 }
 console.log(pStartTotal);
 // create a new empty array named uniqueFruits
-
+const uniqueFruits = [];
 // iterate through fruits and populate uniqueFruits with only unique values from fruits
 // you should a shorter array without repeated values
 
-// console log out your uniqueFruits array
+for (let x = 0; x < fruits.length; x++) {
+  // increment through fruits
+  if (!uniqueFruits.includes(fruits[x])) {
+    // if a fruit isn't found
+    uniqueFruits.push(fruits[x]); // add the fruit to uniquefruits
+  }
+}
 
+// Alternative
+// let count = 0; // 1. added variable that tracks count (will enable fruit to be added to uniqueFruits)
+// let start = false; // 2. added 'start' variable that is set to false (will evaluate true if a repeated fruit is encountered in output array)
+// for (let i = 0; i < fruits.length; i++) {
+//   // 3. added for loop that iterates through fruits array
+//   for (let j = 0; j < uniqueFruits.length; j++) {
+//     // 4. added for loop that iterates through uniqueFruits (output) array
+//     if (fruits[i] === uniqueFruits[j]) {
+//       // 5. added if statement that checks values fruits array are stictly equal to uniqueFruits array, and iterations are passed through in both arrays
+//       start = true; // 6. start is defined as a conditional which evaluates to true if the condition above is met (the variable set this default to false), i.e. if same fruit is present
+//     }
+//   }
+//   // 7. added count which increments based on following condition
+//   count++;
+//   // 8. added conditional which checks the counter has incremented to 1 (to show unique value) and the start value is false
+//   if (count === 1 && start === false) {
+//     // 9. The fruits value is added from the index if both conditions evaluate to true and the value is pushed to (the end of the) uniqueFruits array
+//     uniqueFruits.push(fruits[i]);
+//     // 10. The start variable is reset to false
+//   }
+//   start = false;
+//   // 11. The count is reset
+//   count = 0;
+// }
+// // console log out your uniqueFruits array
+console.log(uniqueFruits);
 // This seperator is here to make your console logs a little easier to read
 // by creating seperations between the different sections of the activity
 console.log("--------------------------Seperator 4--------------------------");
@@ -148,28 +180,73 @@ let twoDimArray = [
 // another seperator for your convenience
 console.log("     first array      ");
 // iterate through the first array inside twoDimArray and console log all the numbers less than 25
+for (let i = 0; i < twoDimArray.length; i++) {
+  if (twoDimArray[0][i] < 25) {
+    console.log(twoDimArray[0][i]);
+  }
+}
 
 // another seperator for your convenience
 console.log("     second array      ");
 // iterate through the second array inside twoDimArray and console log all the numbers less than 25
-
+for (let i = 0; i < twoDimArray.length; i++) {
+  if (twoDimArray[0][i] < 25) {
+    console.log(twoDimArray[1][i]);
+  }
+}
 // another seperator for your convenience
 console.log("     third array      ");
 // iterate through the third array inside twoDimArray and console log all the numbers less than 25
-
+for (let i = 0; i < twoDimArray.length; i++) {
+  if (twoDimArray[0][i] < 25) {
+    console.log(twoDimArray[2][i]);
+  }
+}
 // another seperator for your convenience
 console.log("     fourth array      ");
 // iterate through the fourth array inside twoDimArray and console log all the numbers less than 25
-
+for (let i = 0; i < twoDimArray.length; i++) {
+  if (twoDimArray[0][i] < 25) {
+    console.log(twoDimArray[3][i]);
+  }
+}
 // another seperator for your convenience
 console.log("     fifth array      ");
 // iterate through the fifth array inside twoDimArray and console log all the numbers less than 25
-
+for (let i = 0; i < twoDimArray.length; i++) {
+  if (twoDimArray[0][i] < 25) {
+    console.log(twoDimArray[4][i]);
+  }
+}
 // another seperator for your convenience
 console.log("     odd numbers      ");
-// iterate through twoDimArray and the arrays inside of it and console log all the odd numbers
-
+// iterate through twoDimArray and the arrays inside of it and consolelog all the odd numbers
+for (let outerIndex = 0; outerIndex < twoDimArray.length; outerIndex++) {
+  for (
+    let innerIndex = 0;
+    innerIndex < twoDimArray[outerIndex][innerIndex];
+    innerIndex++
+  ) {
+    if (twoDimArray[outerIndex][innerIndex] % 2 === 1) {
+      console.log(twoDimArray[outerIndex][innerIndex]);
+    }
+  }
+}
 // another seperator for your convenience
 console.log("     sum of multiples of 3      ");
 // iterate through twoDimArray and the arrays inside of it and
 // console log the sum of all the numbers that are a multiple of 3
+let sum1 = 0; //Initialize sum variable
+
+for (let outerIndex = 0; outerIndex < twoDimArray.length; outerIndex++) {
+  for (
+    let innerIndex = 0;
+    innerIndex < twoDimArray[outerIndex].length;
+    innerIndex++
+  ) {
+    if (twoDimArray[outerIndex][innerIndex] % 3 === 0) {
+      sum1 += twoDimArray[outerIndex][innerIndex];
+    }
+  }
+}
+console.log(sum1);
