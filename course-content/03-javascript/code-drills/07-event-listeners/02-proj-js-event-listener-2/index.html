@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles.css" rel="stylesheet" />
+    <title>Event Listener 2</title>
+  </head>
+  <body>
+    <h1>Activity</h1>
+    <p id="letter-input">Please enter a valid letter</p>
+    <p id="letter-output"></p>
+    <script>
+      let input = document.getElementById("letter-input");
+      // the id of the prompt is called and stored in a variable
+      let inputText = input.textContent;
+      // the text of the input is initialized
+      let output = document.getElementById("letter-output");
+      // the id of the output is called and stored in a variable
+      let outputText = [];
+      // the text is initialized as an array
+
+      document.addEventListener("keydown", logKeyPress);
+      // an eventlistener initalizes the event type and function
+
+      function logKeyPress(keyName) {
+        // the function is declared and the argument passed through
+        let keyPressed = keyName.key;
+        // the property of the key object is stored in the variable
+        console.log(`${keyPressed}`);
+        // the console displays the key
+
+        if (!/^[a-zA-Z]$/.test(keyPressed)) {
+          // a regular expression determines if the key is not a letter
+          // the test method tests the value of the key
+          alert(`Press a valid letter`);
+          // if not a letter, the alert is displayed
+        } else {
+          // if a letter
+          inputText = keyPressed;
+          // the variable is reassigned to hold the value of the key
+          input.textContent = inputText;
+          // the key value is passed to update the text
+          outputText.push(inputText);
+          // the text is pushed to the end of the output array
+          output.textContent = outputText.join(",");
+          // the value of the array elements are joined
+        }
+      }
+    </script>
+  </body>
+</html>

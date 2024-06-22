@@ -10,9 +10,9 @@
     <script>
       let hPress; // hPress initialized globally for access on last if statement
 
-      document.addEventListener("keydown", logKeydown); // listener shows type of event and calls the function
+      document.addEventListener("keydown", logKeyDown); // listener shows type of event and calls the function
 
-      function logKeydown(keyName) {
+      function logKeyDown(keyName) {
         // function declared and argument is passed into the function
         let keyPressed = keyName.key; //the object.key method returns the string-keyed property names
         console.log(`You pressed: "${keyPressed}"`);
