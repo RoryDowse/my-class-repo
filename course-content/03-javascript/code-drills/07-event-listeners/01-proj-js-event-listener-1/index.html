@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles.css" rel="stylesheet" />
+    <title>Event Listener 1</title>
+  </head>
+  <body>
+    <script>
+      let hPress; // hPress initialized globally for access on last if statement
+
+      document.addEventListener("keydown", logKeydown); // listener shows type of event and calls the function
+
+      function logKeydown(keyName) {
+        // function declared and argument is passed into the function
+        let keyPressed = keyName.key; //the object.key method returns the string-keyed property names
+        console.log(`You pressed: "${keyPressed}"`);
+
+        if (keyPressed === "h" || keyPressed.key === "H") {
+          hPress = confirm("h key pressed"); // the hPress variable is reassigned.
+        }
+
+        if (keyPressed === "k" || keyPressed.key === "K") {
+          if (hPress) {
+            alert("hello");
+          } else {
+            alert("No thanks");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
