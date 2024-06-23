@@ -62,15 +62,22 @@ const displayAverageSalary = function (employeesArray) {
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
+  // check if there are employees in the object
   if (employees.length > 0) {
+    // define variable with number of employees
     let numberOfEmployees = employees.length;
+    // initialize total salary accumulator
     let totalSalary = 0;
+    // iterate over each employee in the object to sum their salaries
     employees.forEach(function (employee) {
+      // assign and add the values to total salary
       totalSalary += employee.salary;
     });
-
+    // find the average salary by dividing total salary by num of employees
     let averageSalary = totalSalary / employees.length;
+    // define new variable which converts average salary to to decimals
     let averageSalaryWithTwoDecimals = averageSalary.toFixed(2);
+    // log the result
     console.log(
       `The average employee salary between our ${numberOfEmployees} employee(s) is ${averageSalaryWithTwoDecimals}`
     );
