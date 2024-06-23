@@ -5,6 +5,7 @@ addEmployeesBtn.addEventListener("click", function () {
 });
 
 // Collect employee data
+let employees = [];
 const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
   // Psuedocode:
@@ -15,8 +16,13 @@ const collectEmployees = function () {
   // The second prompt will collect last name
   let salary = prompt("Enter salary");
   // The third prompt will collect salary
+  salary = Number(salary);
+  if (isNaN(salary)) {
+    return 0;
+  }
+  // If the salary is not entered, it defaults to 0
 
-  let employees = [
+  employees = [
     {
       firstName: firstName,
       lastName: lastName,
@@ -48,8 +54,6 @@ const collectEmployees = function () {
   // outputs value of employees object for validation in collect.js
 };
 
-console.log(collectEmployees);
-
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
@@ -58,6 +62,21 @@ const displayAverageSalary = function (employeesArray) {
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
+  if (employees.length > 0) {
+    let numberOfEmployees = employees.length;
+    let totalSalary = 0;
+    employees.forEach(function (employee) {
+      totalSalary += employee.salary;
+    });
+
+    let averageSalary = totalSalary / employees.length;
+    let averageSalaryWithTwoDecimals = averageSalary.toFixed(2);
+    console.log(
+      `The average employee salary between our ${numberOfEmployees} employee(s) is ${averageSalaryWithTwoDecimals}`
+    );
+  } else {
+    console.log(`No employees entered`);
+  }
 };
 
 /*
