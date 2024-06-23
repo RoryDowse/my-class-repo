@@ -57,11 +57,6 @@ const collectEmployees = function () {
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
-};
-
-// Select a random employee
-const getRandomEmployee = function (employeesArray) {
-  // TODO: Select and display a random employee
   // check if there are employees in the object
   if (employees.length > 0) {
     // define variable with number of employees
@@ -83,6 +78,28 @@ const getRandomEmployee = function (employeesArray) {
     );
   } else {
     console.log(`No employees entered`);
+  }
+};
+
+// Select a random employee
+const getRandomEmployee = function (employeesArray) {
+  // TODO: Select and display a random employee
+  // check if there are employees in the object
+  if (employees.length > 0) {
+    // find total number of enteries
+    let numberOfEmployees = employeesArray.length;
+    // produce a random number to correspond with entries
+    let randomIndex = Math.floor(Math.random() * numberOfEmployees);
+    // attach random number to object entry and assign to variable
+    let randomEmployee = employees[randomIndex];
+    // store random first name
+    let firstName = randomEmployee.firstName;
+    // store random last name
+    let lastName = randomEmployee.lastName;
+    // log the outcome
+    console.log(
+      `Congratulations to ${firstName} ${lastName}, our random drawing winner!`
+    );
   }
 };
 
