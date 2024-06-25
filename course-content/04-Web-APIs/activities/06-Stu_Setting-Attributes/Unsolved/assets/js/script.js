@@ -30,5 +30,13 @@ site3El.children[1].children[0].setAttribute("alt", "women working");
 site3El.children[1].children[0].setAttribute("style", "padding:10px;");
 
 // Write Your Code Below
-let titles = document.getElementsByTagName(h4);
-titles.setAttribute("style");
+const h4Tags = document.getElementsByTagName("h4");
+function styleUpdate() {
+  for (let i = 0; i < h4Tags.length; i++) {
+    let style = h4Tags[i].setAttribute(
+      "style",
+      "color: blue; font-size: 30px; padding-left: 10px; margin: 0px"
+    );
+  }
+}
+styleUpdate();
