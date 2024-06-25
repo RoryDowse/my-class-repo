@@ -1,19 +1,26 @@
-const timerEl = document.getElementById('countdown');
-const mainEl = document.getElementById('main');
+const timerEl = document.getElementById("countdown");
+const mainEl = document.getElementById("main");
 
 const message =
-  'Some say the world will end in 🔥, Some say in ice. From what I’ve tasted of desire, I hold with those who favor fire. But if it had to perish twice, I think I know enough of hate. To say that for destruction ice, Is also great, And would suffice.';
-const words = message.split(' ');
+  "Some say the world will end in 🔥, Some say in ice. From what I’ve tasted of desire, I hold with those who favor fire. But if it had to perish twice, I think I know enough of hate. To say that for destruction ice, Is also great, And would suffice.";
+const words = message.split(" ");
 
 function countdown() {
   const timeLeft = 5;
 
   // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   const timeInterval = setInterval(function () {
-    //
-    // YOUR CODE HERE
-    //
-  });
+    // display time left
+    timerEl.textContent = `${timeLeft} seconds left`;
+    // decrease time left by 1
+    timeLeft--;
+    // if time left is 0, stop counter and display message
+    if (timeLeft === 0) {
+      clearInterval(timeInterval);
+    } else {
+      displayMessage();
+    }
+  }, 1000);
 }
 
 // Displays the message one word at a time
