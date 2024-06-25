@@ -74,7 +74,7 @@ const displayAverageSalary = function (employeesArray) {
     let averageSalaryWithTwoDecimals = averageSalary.toFixed(2);
     // log the result
     console.log(
-      `The average employee salary between our ${numberOfEmployees} employee(s) is ${averageSalaryWithTwoDecimals}`
+      `"The average employee salary between our ${numberOfEmployees} employee(s) is ${averageSalaryWithTwoDecimals}"`
     );
   } else {
     console.log(`No employees entered`);
@@ -93,12 +93,12 @@ const getRandomEmployee = function (employeesArray) {
     // attach random number to object entry and assign to variable
     let randomEmployee = employees[randomIndex];
     // store random first name
-    let firstName = randomEmployee.firstName;
+    let employeeFirstName = randomEmployee.firstName;
     // store random last name
-    let lastName = randomEmployee.lastName;
+    let employeeLastName = randomEmployee.lastName;
     // log the outcome
     console.log(
-      `Congratulations to ${firstName} ${lastName}, our random drawing winner!`
+      `"Congratulations to ${employeeFirstName} ${employeeLastName}, our random drawing winner!"`
     );
   }
 };
