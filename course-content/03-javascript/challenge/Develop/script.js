@@ -58,47 +58,45 @@ const collectEmployees = function () {
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
   // check if there are employees in the object
-  if (employees.length > 0) {
-    // define variable with number of employees
-    let numberOfEmployees = employees.length;
-    // initialize total salary accumulator
-    let totalSalary = 0;
-    // iterate over each employee in the object to sum their salaries
-    employees.forEach(function (employee) {
-      // assign and add the values to total salary
-      totalSalary += employee.salary;
-    });
-    // find the average salary by dividing total salary by num of employees
-    let averageSalary = totalSalary / employees.length;
-    // define new variable which converts average salary to to decimals
-    let averageSalaryWithTwoDecimals = averageSalary.toFixed(2);
-    // log the result
-    console.log(
-      `"The average employee salary between our ${numberOfEmployees} employee(s) is ${averageSalaryWithTwoDecimals}"`
-    );
-  } else {
-    console.log(`No employees entered`);
-  }
+  // if (employees.length > 0) {
+  // define variable with number of employees
+  // initialize total salary accumulator
+  let totalSalary = 0;
+
+  let numberOfEmployees = employeesArray.length;
+  // iterate over each employee in the object to sum their salaries
+  employeesArray.forEach(function (employee) {
+    // assign and add the values to total salary
+    totalSalary += employee.salary;
+  });
+
+  // find the average salary by dividing total salary by num of employees
+  let averageSalary = totalSalary / numberOfEmployees;
+  // define new variable which converts average salary to to decimals
+  let averageSalaryWithTwoDecimals = averageSalary.toFixed(2);
+  // log the result
+  console.log(
+    `The average employee salary between our ${numberOfEmployees} employee(s) is $${averageSalaryWithTwoDecimals}`
+  );
+  // } else {
+  // console.log(`No employees entered`);
+  // }
 };
 
-// Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
   // check if there are employees in the object
-  if (employees.length > 0) {
-    // find total number of enteries
-    let numberOfEmployees = employeesArray.length;
-    // produce a random number to correspond with entries
-    let randomIndex = Math.floor(Math.random() * numberOfEmployees);
-    // attach random number to object entry and assign to variable
-    let randomEmployee = employees[randomIndex];
-    // store random first name
-    let employeeFirstName = randomEmployee.firstName;
-    // store random last name
-    let employeeLastName = randomEmployee.lastName;
+  if (employeesArray.length > 0) {
+    // grab random employee
+    const numberOfEmployees = employeesArray.length;
+    const randomIndex = Math.floor(Math.random() * numberOfEmployees);
+    const randomEmployee = employeesArray[randomIndex];
+
+    const employeeFirstName = randomEmployee.firstName;
+    const employeeLastName = randomEmployee.lastName;
     // log the outcome
     console.log(
-      `"Congratulations to ${employeeFirstName} ${employeeLastName}, our random drawing winner!"`
+      `Congratulations to ${employeeFirstName} ${employeeLastName}, our random drawing winner!`
     );
   }
 };
