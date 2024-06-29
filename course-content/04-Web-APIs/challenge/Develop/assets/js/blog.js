@@ -5,7 +5,7 @@ const getMainElement = document.getElementById("main");
 function addArticle(blogData) {
   const container = document.createElement("article");
   const titleElement = document.createElement("h2");
-  const contentElement = document.createElement("p");
+  const contentElement = document.createElement("blockquote");
   const usernameElement = document.createElement("p");
 
   titleElement.textContent = blogData.title;
@@ -26,22 +26,22 @@ function addArticle(blogData) {
 
 // TODO: Create a function that handles the case where there are no blog posts to display
 function noPost() {
-  const storedBlog = sessionStorage.getItem("blogData");
+  const storedBlog = localStorage.getItem("blogData");
   if (!storedBlog || storedBlog.trim() === "") {
-    alert("No posts are available");
+    alert("No Blog posts yet...");
   }
 }
 noPost();
 // TODO: Create a function that reads from local storage and returns the data
 function renderBlogFromStorage() {
-  const storedBlog = sessionStorage.getItem("blogData");
+  const storedBlog = localStorage.getItem("blogData");
   if (storedBlog) {
     const blogData = JSON.parse(storedBlog);
     console.log("Blog data retrieved from localStorage:", blogData);
     addArticle(blogData);
   } else {
-    console.log("No blog data found in sessionStorage");
+    console.log("No blog data found in localStorage");
   }
 }
-// TODO: Call the function to render the list of blog posts
 renderBlogFromStorage();
+// TODO: Call the function to render the list of blog posts

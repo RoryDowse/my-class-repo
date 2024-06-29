@@ -26,7 +26,7 @@ function formSubmit(event) {
   let redirectURL = "./blog.html";
 
   const redirectPage = function (url, blogData) {
-    sessionStorage.setItem("blogData", JSON.stringify(blogData));
+    localStorage.setItem("blogData", JSON.stringify(blogData));
     location.assign(url);
   };
   redirectPage(redirectURL, blog);
