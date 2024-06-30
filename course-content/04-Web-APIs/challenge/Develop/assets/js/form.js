@@ -20,9 +20,6 @@ function formSubmit(event) {
     content: content,
   };
 
-  localStorage.setItem("blog", JSON.stringify(blog));
-  console.log("Blog data stored in localStorage");
-
   let redirectURL = "./blog.html";
 
   const redirectPage = function (url, blogData) {
