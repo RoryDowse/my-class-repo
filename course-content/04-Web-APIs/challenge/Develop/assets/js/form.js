@@ -1,20 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.getElementById("toggle");
-  const body = document.body;
-
-  toggleButton.addEventListener("click", () => {
-    if (body.classList.contains("light")) {
-      body.classList.remove("light");
-      body.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      body.classList.remove("dark");
-      body.classList.add("light");
-      localStorage.setItem("theme", "light");
-    }
-  });
-});
-
 // TODO: Create a variable that selects the form element
 const getForm = document.getElementById("blogForm");
 // TODO: Create a function that handles the form submission. Grab the form data and store it in local storage, then redirect to the blog page using the redirectPage function. If the form is submitted with missing data, display an error message to the user.

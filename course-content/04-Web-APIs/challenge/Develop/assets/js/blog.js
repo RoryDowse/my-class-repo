@@ -1,20 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.getElementById("toggle");
-  const body = document.body;
-
-  toggleButton.addEventListener("click", () => {
-    if (body.classList.contains("light")) {
-      body.classList.remove("light");
-      body.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      body.classList.remove("dark");
-      body.classList.add("light");
-      localStorage.setItem("theme", "light");
-    }
-  });
-});
-
 // TODO: Create a variable that selects the main element
 const getMainElement = document.getElementById("main");
 // TODO: Create a function that builds an element and appends it to the DOM
